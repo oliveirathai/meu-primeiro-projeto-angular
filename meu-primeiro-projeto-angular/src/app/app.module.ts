@@ -7,6 +7,7 @@ import { TopoComponent } from './topo/topo.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ProcessaDadosComponent } from './processa-dados/processa-dados.component';
+import { AlertaComponent } from './alerta/alerta.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ProcessaDadosComponent } from './processa-dados/processa-dados.componen
     TopoComponent,
     RodapeComponent,
     FormularioComponent,
-    ProcessaDadosComponent
+    ProcessaDadosComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule
