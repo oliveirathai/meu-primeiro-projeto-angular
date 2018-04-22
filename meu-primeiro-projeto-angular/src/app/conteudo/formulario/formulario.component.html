@@ -1,0 +1,32 @@
+<div class="container">
+
+  <div class="form-campo-medio">
+    <label for="Nome">Nome</label>
+    <input type="text" class="form-control" id="Nome" name="nome" ng-model="novo.Nome" required>
+    <div ng-if="(formulario.nome.$touched || formulario.$submitted) && formulario.titulo.$invalid">
+      <span ng-if="formulario.nome.$error.required">Este campo é obrigatório</span>
+    </div>
+    <div class="form-campo-medio">
+      <label for="Telefone">Telefone</label>
+      <input type="text" class="form-control" id="Telefone">
+    </div>
+    <div class="form-campo-medio">
+      <label for="Cargo">Cargo</label>
+      <input type="text" class="form-control" id="Cargo">
+    </div>
+    <div class="form-campo-medio">
+      <label for="Problema">Problema relatado ou sujestão</label>
+      <textarea class="form-control" id="Problema" rows="3"></textarea>
+    </div>
+    <form>
+      <div class="form-campo">
+        <label for="Foto">Envie uma Foto</label>
+        <input type="file" class="form-control-file" id="Foto">
+      </div>
+      <p></p>
+      <footer>
+        <button type="reset" ng-click="resetForm()">Limpar</button>
+        <button type="submit">Salvar</button>
+      </footer>
+    </form>
+  </div>
