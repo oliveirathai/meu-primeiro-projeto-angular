@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-
+func: any ={
+  nome : null,
+  telefone: null,
+  cargo :null,
+  problema: null,
+  foto:null
+}
   constructor() { }
 
   ngOnInit() {
+  }
+  onSubmit (Form) {
+console.log (Form);
   }
 
 }

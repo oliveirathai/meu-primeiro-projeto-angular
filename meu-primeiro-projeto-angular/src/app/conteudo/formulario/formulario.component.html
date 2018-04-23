@@ -1,32 +1,41 @@
 <div class="container">
-
+  <form #f ="ngForm" (ngSubmit)="onSubmit(f)">
   <div class="form-campo-medio">
     <label for="Nome">Nome</label>
-    <input type="text" class="form-control" id="Nome" name="nome" ng-model="novo.Nome" required>
-    <div ng-if="(formulario.nome.$touched || formulario.$submitted) && formulario.titulo.$invalid">
-      <span ng-if="formulario.nome.$error.required">Este campo é obrigatório</span>
-    </div>
-    <div class="form-campo-medio">
-      <label for="Telefone">Telefone</label>
-      <input type="text" class="form-control" id="Telefone">
-    </div>
-    <div class="form-campo-medio">
-      <label for="Cargo">Cargo</label>
-      <input type="text" class="form-control" id="Cargo">
-    </div>
-    <div class="form-campo-medio">
-      <label for="Problema">Problema relatado ou sujestão</label>
-      <textarea class="form-control" id="Problema" rows="3"></textarea>
-    </div>
-    <form>
-      <div class="form-campo">
-        <label for="Foto">Envie uma Foto</label>
-        <input type="file" class="form-control-file" id="Foto">
-      </div>
-      <p></p>
-      <footer>
-        <button type="reset" ng-click="resetForm()">Limpar</button>
-        <button type="submit">Salvar</button>
-      </footer>
-    </form>
+    <input required #nome="ngModel" name="nome" [(ngModel)]="func.nome" type="text" class="form-control" id="Nome" placeholder="Nome" >
   </div>
+  <div 
+  *ngIf="!nome.valid && nome.touched"
+  class="alert alert-danger form-group col-6 mx-auto" role ="alert">
+  Nome e obrigatorio </div>
+  <div class="form-campo-medio">
+    <label for="Telefone">Telefone</label>
+    <input name="telefone" [(ngModel)]="func.telefone" type="text" class="form-control" id="Telefone" placeholder="Telefone">
+  </div>
+  <div class="form-campo-medio">
+    <label for="Cargo">Cargo</label>
+    <input required #cargo='ngModel'name="cargo" [(ngModel)]="func.cargo" type="text" class="form-control" id="Cargo" placeholder="Cargo">
+    </div>
+    <div 
+  *ngIf="!cargo.valid && cargo.touched"
+  class="alert alert-danger form-group col-6 mx-auto" role ="alert">
+  cargo e obrigatorio </div>
+  <div class="form-campo-medio">
+    <label for="Problema">Problema relatado ou sujestão</label>
+    <input required #problema='ngModel'name="problema" [(ngModel)]="func.problema" type="text" class="form-control" id="Problema" rows="3">
+    </div>
+    <div 
+  *ngIf="!problema.valid && problema.touched"
+  class="alert alert-danger form-group col-6 mx-auto" role ="alert">
+  Problema ou sujestão e obrigatorio </div>
+        <div class="form-campo">
+      <label for="Foto">Envie uma Foto</label>
+      <input name="foto" [(ngModel)]="func.foto"type="file" class="form-control-file" id="Foto">
+    </div>
+    <p></p>
+    <footer>
+      <button type="reset" class="btn btn-primary" ng-click="resetForm()">Limpar</button>
+      <button type="submit" class ="btn btn-primary">Salvar</button>
+    </footer>
+  </form>
+</div>
